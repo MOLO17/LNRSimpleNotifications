@@ -169,9 +169,14 @@ public class LNRNotificationManager: NSObject {
     public var notificationsPosition: LNRNotificationPosition = LNRNotificationPosition.Top
     
     /**
-     *  Use to set the system sound played when a a notification is displayed.
+     *  Use to set the system sound played when a notification is displayed.
      */
     public var notificationSound: SystemSoundID?
+    
+    /**
+     * Use to set or disable the system vibration when a notification is displayed.
+     */
+    public var shouldVibrate: Bool = true
     
     // MARK: Internal
     
@@ -194,7 +199,11 @@ public class LNRNotificationManager: NSObject {
         }
         
         if let notificationSound = notificationSound {
-            AudioServicesPlayAlertSound(notificationSound)
+            AudioServicesPlaySystemSound(notificationSound)
+        }
+        
+        if shouldVibrate {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         }
         
         UIView.animateWithDuration(kLNRNotificationAnimationDuration + 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [UIViewAnimationOptions.CurveEaseInOut, UIViewAnimationOptions.BeginFromCurrentState, UIViewAnimationOptions.AllowUserInteraction], animations: { () -> Void in
