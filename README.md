@@ -7,15 +7,19 @@ __TSMessages__ is an amazingly powerful in-app notifications library but require
 
 ## Swift 2.3
 
-Use the __swift2.3__ branch. This branch exists to extend Swift 2.3 support. However, features are frozen and it will not be maintained.
+This branch exists to extend Swift 2.3 support. However, features are frozen and it will not be maintained.
 
 #### Podfile
 
-To use the __swift2.3__ branch update your podfile entry as follows:
+To use this branch update your podfile entry as follows:
 
 ```swift
 pod 'LNRSimpleNotifications', :git => 'https://github.com/LISNR/LNRSimpleNotifications.git', :branch => 'swift2.3'
 ```
+
+## Swift 3
+
+Use the __master__ branch.
 
 ## How do I set it up?
 
@@ -23,7 +27,7 @@ We're glad you asked.
 
 If your project is in Swift:
 
-1. Add __LNRSimpleNotifications__ to your Podfile or Package.swift.
+1. Add __LNRSimpleNotifications__ to your Podfile.
 2. Add the AudioToolbox framework to your project. 
 3. Add __import LNRSimpleNotifications__ in the classes you want to trigger or style your in-app notifications.
 4. (Optional) Style your notifications in the class managing your notification's initializer.
